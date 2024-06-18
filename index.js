@@ -1,3 +1,4 @@
+const hostname = '0.0.0.0';
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -138,6 +139,7 @@ app.get('/rtc/:channel/:role/:tokentype/:uid', nocache , generateRTCToken);
 app.get('/rtm/:uid/', nocache , generateRTMToken);
 app.get('/rte/:channel/:role/:tokentype/:uid', nocache , generateRTEToken);
 
-app.listen(PORT, () => {
+app.listen(PORT, hostname,  () => {
   console.log(`Listening on port: ${PORT}`);
 });
+  
